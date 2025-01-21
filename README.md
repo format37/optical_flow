@@ -73,7 +73,31 @@ pip install opencv-python numpy
 The script generates:
 1. Real-time visualization window
 2. Output video file ('output.mp4') with tracked trajectories
-3. Returns trajectory data for further analysis
+3. Trajectory data saved as CSV file ('trajectories.csv') for further analysis
+4. Trajectory analysis visualization ('assets/trajectories_with_circles.png')
+
+## Trajectory Analysis
+
+The project includes advanced trajectory analysis capabilities:
+
+1. **Data Processing**:
+   - Trajectories are saved to CSV format with point IDs and coordinates
+   - Outlier removal using z-score thresholding
+   - Robust handling of incomplete or noisy trajectories
+
+2. **Circle Fitting**:
+   - Fits circular paths to each point trajectory
+   - Uses least squares optimization to find best-fit circles
+   - Calculates center coordinates and radius for each trajectory
+   - Determines median circle parameters across all trajectories
+
+3. **Visualization**:
+   - Plots all point trajectories with fitted circles
+   - Highlights median circle and center point
+   - Provides insights into overall fluid motion patterns
+   - Output saved as 'trajectories_with_circles.png'
+
+![Trajectory Analysis](assets/trajectories_with_circles.png)
 
 ## License
 
